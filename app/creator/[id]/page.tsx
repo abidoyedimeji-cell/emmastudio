@@ -3,6 +3,19 @@ import { notFound } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
 import { createClient } from "@/lib/supabase/server"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { SiteHeader } from "@/components/site-header"
+import { SiteFooter } from "@/components/site-footer"
+import { UpcomingStudiosCarousel } from "@/components/upcoming-studios-carousel"
+import {
+  MapPin, Star, Calendar, Award, CheckCircle2, Heart, Camera, Video,
+  Mic, Palette, ArrowLeft, Share2, Clock, Instagram, Globe, Users,
+  Briefcase, Sparkles,
+} from "lucide-react"
 
 type Props = {
   params: Promise<{ id: string }>
@@ -49,38 +62,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
   }
 }
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { SiteHeader } from "@/components/site-header"
-import { SiteFooter } from "@/components/site-footer"
-import { createClient } from "@/lib/supabase/server"
-import {
-  MapPin,
-  Star,
-  Calendar,
-  Award,
-  CheckCircle2,
-  Heart,
-  Camera,
-  Video,
-  Mic,
-  Palette,
-  ArrowLeft,
-  Share2,
-  Clock,
-  Instagram,
-  Globe,
-  Users,
-  Briefcase,
-  Sparkles,
-} from "lucide-react"
-import { UpcomingStudiosCarousel } from "@/components/upcoming-studios-carousel"
 
-export default async function CreatorDetailPage({ params }: { params: { id: string } }) {
-  const { id } = params
+export default async function CreatorDetailPage({ params }: Props) {
+  const { id } = await params
   const supabase = await createClient()
 
   // Try to fetch from database first
