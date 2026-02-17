@@ -1,0 +1,21 @@
+name,description,duration_hours,price,includes,is_popular,is_active,owner_type,owner_slug
+Half Day Shoot,Morning or afternoon session with full studio access,4,180.00,"{4 hour studio access,Full lighting kit,Backdrop options,WiFi,Changing room}",false,true,studio,shoreditch-daylight-studio
+Full Day Exclusive,Exclusive full-day access to the entire studio,8,340.00,"{8 hour exclusive access,All equipment included,Kitchen access,Steamer,Early access from 7am}",true,true,studio,shoreditch-daylight-studio
+Tracking Session,Recording session with engineer,4,280.00,"{4 hour studio time,In-house engineer,Pro Tools session,Basic rough mix}",false,true,studio,brixton-sound-house
+Full Production Day,"Complete recording, mixing, and mastering",10,600.00,"{10 hour session,Dedicated engineer,Full mixing,Mastering,Unlimited revisions,Stem exports}",true,true,studio,brixton-sound-house
+Content Creator Package,Quick video content session,4,250.00,"{4 hour studio,Green screen,Basic lighting,Teleprompter,Self-operated}",false,true,studio,camden-film-works
+Commercial Production,Full day production with all equipment,10,700.00,"{10 hour access,Full ARRI lighting,Grip equipment,Editing suite access,Production assistant}",true,true,studio,camden-film-works
+Flex Session,Flexible half-day booking,4,150.00,"{4 hour access,Configurable space,Basic equipment,WiFi,Kitchen}",false,true,studio,northern-quarter-loft
+Full Day Takeover,Complete loft access for the day,10,380.00,"{10 hour exclusive,All equipment,Kitchen access,Parking for 2,Overnight gear storage}",true,true,studio,northern-quarter-loft
+Premium Half Day,White-glove studio experience,4,380.00,"{4 hour premium access,High-end equipment,Dedicated assistant,Catering included}",false,true,studio,soho-production-house
+VIP Full Day,The ultimate production experience,10,850.00,"{10 hour VIP access,All premium equipment,Production assistant,Gourmet catering,Valet parking,Post suite access}",true,true,studio,soho-production-house
+Portrait Session,Professional portrait photography,2,190.00,"{2 hour session,20 retouched images,Online gallery,Print rights,Outfit guidance}",false,true,creator,marcus-cole
+Editorial Shoot,Full editorial photography experience,5,450.00,"{5 hour session,50 retouched images,Creative direction,Mood board,3 outfit changes,Online gallery}",true,true,creator,marcus-cole
+Performance Capture,Music video performance shoot,4,400.00,"{4 hour shoot,Single camera setup,Basic edit,Colour grade,1 revision round}",false,true,creator,priya-sharma
+Full Music Video,Complete music video production,8,800.00,"{8 hour shoot,Multi-camera,Full edit,Colour grade,VFX,BTS content,3 revision rounds}",true,true,creator,priya-sharma
+Single Mix,Professional track mixing,2,170.00,"{Full mix,Stem exports,2 revision rounds,48hr turnaround}",false,true,creator,kwame-asante
+EP Package,Multi-track EP mixing and mastering,10,600.00,"{Up to 5 tracks,Full mixing,Mastering,Unlimited revisions,Stem exports,Distribution-ready files}",true,true,creator,kwame-asante
+Headshot Session,Professional headshots,1,120.00,"{1 hour session,5 retouched headshots,LinkedIn-optimised,Same-week delivery}",false,true,creator,david-okonkwo
+Brand Story Package,Full personal branding shoot,4,380.00,"{4 hour session,30 images,Multiple locations,Style consultation,Social media crops,Brand guidelines}",true,true,creator,david-okonkwo
+Content Bundle,Photo + video combo,4,340.00,"{4 hour session,15 photos,1 short-form video,Social media edits,Same-week delivery}",false,true,creator,lucas-rivera
+Full Creative Package,Complete content creation,8,680.00,"{8 hour session,40 photos,3 videos,Full editing,Social media package,Content calendar}",true,true,creator,lucas-rivera

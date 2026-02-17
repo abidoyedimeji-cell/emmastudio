@@ -1,0 +1,3 @@
+availability_owner_type,studio_slug,creator_slug,start_time,end_time,is_available,block_type,notes
+studio,example-deptford-studio-one,,2026-02-20T10:00:00+00:00,2026-02-20T18:00:00+00:00,true,available,Default availability
+creator,,example-ayo-mensah,2026-02-20T10:00:00+00:00,2026-02-20T18:00:00+00:00,true,available,Default availability

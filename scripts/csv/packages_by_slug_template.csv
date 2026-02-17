@@ -1,0 +1,3 @@
+package_owner_type,studio_slug,creator_slug,name,description,duration_hours,price,includes,is_popular,is_active
+studio,example-deptford-studio-one,,2 Hour Block,Quick session for content or podcast.,2,110,"{Studio access,Basic setup}",true,true
+creator,,example-ayo-mensah,Half Day (4 Hours),Multi-look shoot or interview session.,4,220,"{Planning support,On-site coverage}",false,true
