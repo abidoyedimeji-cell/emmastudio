@@ -1,5 +1,5 @@
 import { createClient } from "@/lib/supabase/server"
-import { stripe } from "@/lib/stripe"
+import { getStripe } from "@/lib/stripe"
 import { type NextRequest, NextResponse } from "next/server"
 
 export async function POST(req: NextRequest) {
@@ -29,6 +29,7 @@ export async function POST(req: NextRequest) {
     const totalPrice = packagesData.reduce((sum, pkg) => sum + pkg.price, 0)
     const amountInCents = Math.round(totalPrice * 100)
 
+    const stripe = getStripe()
     const paymentIntent = await stripe.paymentIntents.create({
       amount: amountInCents,
       currency: "usd",

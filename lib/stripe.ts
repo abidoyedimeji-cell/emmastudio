@@ -1,6 +1,19 @@
 import "server-only"
 import Stripe from "stripe"
 
-export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: "2024-12-18.acacia",
-})
+let stripeSingleton: Stripe | null = null
+
+export function getStripe() {
+  const key = process.env.STRIPE_SECRET_KEY
+  if (!key) {
+    throw new Error("Missing STRIPE_SECRET_KEY")
+  }
+
+  if (!stripeSingleton) {
+    stripeSingleton = new Stripe(key, {
+      apiVersion: "2024-12-18.acacia",
+    })
+  }
+
+  return stripeSingleton
+}

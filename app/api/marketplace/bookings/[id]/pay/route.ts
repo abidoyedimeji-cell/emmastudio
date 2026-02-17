@@ -1,5 +1,5 @@
 import { createClient } from "@/lib/supabase/server"
-import { stripe } from "@/lib/stripe"
+import { getStripe } from "@/lib/stripe"
 import { type NextRequest, NextResponse } from "next/server"
 
 export async function POST(
@@ -53,6 +53,7 @@ export async function POST(
     const depositCents = Math.round((booking.deposit_amount || booking.total * 0.5) * 100)
 
     // Create Stripe Checkout Session
+    const stripe = getStripe()
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
       payment_method_types: ["card"],
