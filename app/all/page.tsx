@@ -254,9 +254,9 @@ export default function AllPage() {
                                   </div>
                                 </div>
                                 <p className="text-sm text-white/70 mb-3 line-clamp-2">{creator.bio}</p>
-{creator.city && (
-                          <span className="flex items-center gap-1">
-                            <MapPin className="h-4 w-4" /><span>{creator.city}</span>
+                                {creator.city && (
+                                  <div className="flex items-center gap-1 text-white/70 text-sm">
+                                    <MapPin className="h-4 w-4" /><span>{creator.city}</span>
                                   </div>
                                 )}
                                 <div className="flex items-center justify-between pt-4 border-t border-white/20">
