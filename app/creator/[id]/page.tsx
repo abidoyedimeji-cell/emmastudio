@@ -189,7 +189,7 @@ export default async function CreatorDetailPage({ params }: Props) {
 
   const { data: dbStudios } = await supabase
     .from("emma_studios")
-    .select("id, name, slug, cover_image, hourly_rate, rating, location, categories")
+    .select("id, name, slug, cover_image, hourly_rate, rating, city, categories")
     .limit(6)
 
   const upcomingStudios = (dbStudios || []).map((studio) => ({
@@ -203,7 +203,7 @@ export default async function CreatorDetailPage({ params }: Props) {
     packageName: "Half Day Package",
     packagePrice: (studio.hourly_rate || 75) * 3,
     packageDescription: "3 hours studio access with basic lighting setup included",
-    city: studio.location || "London",
+    city: studio.city || "London",
     slug: studio.slug,
   }))
 

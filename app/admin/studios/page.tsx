@@ -71,7 +71,7 @@ export default function StudiosPage() {
                   <Button variant="ghost" size="icon" className="h-8 w-8 bg-transparent"><MoreVertical className="h-4 w-4" /></Button>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
-                  <MapPin className="h-4 w-4" /><span>{studio.location}</span>
+                  <MapPin className="h-4 w-4" /><span>{studio.city}{studio.postcode ? `, ${studio.postcode}` : ""}</span>
                 </div>
                 <div className="flex items-center gap-1 mb-4">
                   <Star className="h-4 w-4 fill-accent text-accent" />

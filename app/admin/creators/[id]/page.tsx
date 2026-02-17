@@ -30,7 +30,7 @@ export default function EditCreatorPage() {
     if (creator) {
       setFormData({
         name: creator.name || "", bio: creator.bio || "",
-        specialty: creator.specialty || "", location: creator.location || "",
+        specialty: creator.specialty || "", city: creator.city || "",
         hourly_rate: creator.hourly_rate || 0, years_experience: creator.years_experience || 0,
         skills: creator.skills || [], instagram: creator.instagram || "", website: creator.website || "",
       })
@@ -43,7 +43,7 @@ export default function EditCreatorPage() {
     const supabase = createClient()
     const { error } = await supabase.from("emma_creators").update({
       name: formData.name, bio: formData.bio, specialty: formData.specialty,
-      location: formData.location, hourly_rate: formData.hourly_rate,
+      city: formData.city, hourly_rate: formData.hourly_rate,
       years_experience: formData.years_experience, skills: formData.skills,
       instagram: formData.instagram, website: formData.website,
     }).eq("id", id)
@@ -95,7 +95,7 @@ export default function EditCreatorPage() {
             </div>
             <div><Label htmlFor="bio">Bio</Label><Textarea id="bio" value={formData.bio} onChange={(e) => setFormData({ ...formData, bio: e.target.value })} rows={4} /></div>
             <div className="grid md:grid-cols-3 gap-4">
-              <div><Label htmlFor="location">Location</Label><Input id="location" value={formData.location} onChange={(e) => setFormData({ ...formData, location: e.target.value })} /></div>
+              <div><Label htmlFor="city">City</Label><Input id="city" value={formData.city} onChange={(e) => setFormData({ ...formData, city: e.target.value })} /></div>
               <div><Label htmlFor="experience">Years of Experience</Label><Input id="experience" type="number" value={formData.years_experience} onChange={(e) => setFormData({ ...formData, years_experience: Number(e.target.value) })} /></div>
               <div><Label htmlFor="hourly_rate">Hourly Rate</Label><Input id="hourly_rate" type="number" value={formData.hourly_rate} onChange={(e) => setFormData({ ...formData, hourly_rate: Number(e.target.value) })} /></div>
             </div>

@@ -58,8 +58,8 @@ export default function AllPage() {
 
   const allLocations = useMemo(() => {
     const locs = [
-      ...studios.map((s) => s.location).filter(Boolean),
-      ...creators.map((c) => c.location).filter(Boolean),
+      ...studios.map((s) => s.city).filter(Boolean),
+      ...creators.map((c) => c.city).filter(Boolean),
     ]
     return Array.from(new Set(locs)).sort()
   }, [studios, creators])
@@ -78,9 +78,9 @@ export default function AllPage() {
         searchTerm === "" ||
         studio.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         (studio.description || "").toLowerCase().includes(searchTerm.toLowerCase()) ||
-        (studio.location || "").toLowerCase().includes(searchTerm.toLowerCase())
+        (studio.city || "").toLowerCase().includes(searchTerm.toLowerCase())
       const matchesType = studioType === "all" || (studio.categories && studio.categories.includes(studioType))
-      const matchesLocation = location === "all" || studio.location === location
+      const matchesLocation = location === "all" || studio.city === location
       return matchesSearch && matchesType && matchesLocation
     })
   }, [studios, searchTerm, studioType, location])
@@ -92,9 +92,9 @@ export default function AllPage() {
         creator.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         (creator.bio || "").toLowerCase().includes(searchTerm.toLowerCase()) ||
         (creator.specialty || "").toLowerCase().includes(searchTerm.toLowerCase()) ||
-        (creator.location || "").toLowerCase().includes(searchTerm.toLowerCase())
+        (creator.city || "").toLowerCase().includes(searchTerm.toLowerCase())
       const matchesType = creatorType === "all" || creator.specialty === creatorType
-      const matchesLocation = location === "all" || creator.location === location
+      const matchesLocation = location === "all" || creator.city === location
       return matchesSearch && matchesType && matchesLocation
     })
   }, [creators, searchTerm, creatorType, location])
@@ -218,7 +218,7 @@ export default function AllPage() {
                                   <span className="px-2 py-1 bg-white/20 text-white rounded-full text-xs font-medium">{studio.categories?.[0] || "Studio"}</span>
                                 </div>
                                 <div className="flex items-center gap-2 text-sm text-white/70 mb-4">
-                                  <MapPin className="h-4 w-4" /><span>{studio.location}</span>
+                                  <MapPin className="h-4 w-4" /><span>{studio.city}{studio.postcode ? `, ${studio.postcode}` : ""}</span>
                                 </div>
                                 <div className="flex items-center justify-between pt-4 border-t border-white/20">
                                   <div className="flex items-center gap-2">
@@ -254,9 +254,9 @@ export default function AllPage() {
                                   </div>
                                 </div>
                                 <p className="text-sm text-white/70 mb-3 line-clamp-2">{creator.bio}</p>
-                                {creator.location && (
-                                  <div className="flex items-center gap-2 text-sm text-white/70 mb-4">
-                                    <MapPin className="h-4 w-4" /><span>{creator.location}</span>
+{creator.city && (
+                          <span className="flex items-center gap-1">
+                            <MapPin className="h-4 w-4" /><span>{creator.city}</span>
                                   </div>
                                 )}
                                 <div className="flex items-center justify-between pt-4 border-t border-white/20">

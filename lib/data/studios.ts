@@ -6,7 +6,7 @@ export async function getStudios({ limit = 24, featured }: { limit?: number; fea
   let query = supabase
     .from("emma_studios")
     .select(
-      "id, name, slug, studio_type, description, city, postcode, size, hourly_rate, half_day_rate, full_day_rate, cover_image, gallery_images, amenities, equipment, rating, review_count, is_featured, is_verified, location, categories, supports_combined"
+      "id, name, slug, studio_type, description, city, postcode, address, size, hourly_rate, half_day_rate, full_day_rate, cover_image, gallery_images, amenities, equipment, rating, review_count, is_featured, is_verified, categories, supports_combined"
     )
     .eq("is_active", true)
 
